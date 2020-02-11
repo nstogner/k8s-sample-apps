@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-api
+spec:
+  selector:
+    matchLabels:
+      app: hello-api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hello-api
+    spec:
+      containers:
+      - name: hello-api
+        image: nstogner/hello-go-api:latest
+        env:
+        - name: ADDR
+          value: ":8080"
+        ports:
+        - containerPort: 8080
