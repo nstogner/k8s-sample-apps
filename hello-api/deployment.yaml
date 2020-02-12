@@ -16,7 +16,7 @@ spec:
       - env:
         - name: ADDR
           value: :8080
-        image: nstogner/hello-go-api:0121cc30
+        image: nstogner/hello-go-api:ef1ee5d5
         name: hello-api
         ports:
         - containerPort: 8080
