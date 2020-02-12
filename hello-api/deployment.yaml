@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: hello-api
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: hello-api
-  replicas: 2
   template:
     metadata:
       labels:
         app: hello-api
     spec:
       containers:
-      - name: hello-api
-        image: nstogner/hello-go-api:latest
-        env:
+      - env:
         - name: ADDR
-          value: ":8080"
+          value: :8080
+        image: nstogner/hello-go-api:e78973f0
+        name: hello-api
         ports:
         - containerPort: 8080
