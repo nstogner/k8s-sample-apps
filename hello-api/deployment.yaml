@@ -16,7 +16,7 @@ spec:
       - env:
         - name: ADDR
           value: :8080
-        image: ""
+        image: nginx
         name: hello-api
         ports:
         - containerPort: 8080
